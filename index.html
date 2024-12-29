@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scentique</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!--Custom CSS-->
+    <style>
+      /* Home */
+      .home-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/home.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: "merriweather";
+      }
+
+      /* About */
+      .about-section {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        color: white;
+        background: linear-gradient(135deg, rgba(89, 90, 90, 0.6) 50%, rgba(28, 28, 28, 0.6) 50%);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        font-family: "playfair display";
+        font-size: x-large;
+      }
+
+      /* Product Cards */
+      .products {
+        background: linear-gradient(135deg, rgba(89, 90, 90, 0.6) 30%, rgba(130, 130, 130, 0.6) 80%);
+        font-family: "merriweather";
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 15px rgba(233, 228, 187, 0.3);
+        font-family: "playfair display";
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      /* Product Description */
+      .product-description {
+        padding: 80px 0;
+        background: #c4c4c4;
+        display: none;
+        font-family: "playfair display";
+      }
+
+      .product-description.active {
+        display: block;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: rgba(130, 130, 130, 0.6);
+        font-family: "merriweather";
+      }
+
+      .contact-info {
+        background: #c4c4c4;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        font-family: "playfair display";
+      }
+
+      .social-links a {
+        color: #333;
+        margin: 0 10px;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #3e4144;
+      }
+
+      /* Custom Button */
+      .btn-custom {
+        padding: 12px 30px;
+        font-size: 18px;
+        border: none;
+        color: white;
+        background: #3e4144;
+        font-family: "playfair display";
+      }
+      .order {
+        background: linear-gradient(135deg, rgba(28, 28, 28, 0.6) 50%, rgba(130, 130, 130, 0.6) 50%);
+        font-family: "playfair display";
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="font-family: 'playfair display'; font-weight: bold">Scentique</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#order">Order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar End-->
+
+    <!--Home Start-->
+    <section class="home-section" id="home">
+      <div class="container">
+        <h1 class="display-3 mb-4" style="font-weight: bold">Discover Your Signature Scent</h1>
+        <p class="lead mb-4">Experience the luxury of premium fragrances</p>
+        <a href="#products" class="btn btn-light btn-lg btn-custom">Explore Collection</a>
+      </div>
+    </section>
+    <!--Home End-->
+
+    <!--About Start-->
+    <section class="about-section py-5" id="about">
+      <div class="container">
+        <h2 class="text-center mb-5" style="font-weight: bold">About Our Fragrances</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Floral</h4>
+            <p>Experience the delicate aroma of blooming flowers, perfect for a romantic and elegant vibe.</p>
+          </div>
+          <div class="col-md-6">
+            <h4>Woody</h4>
+            <p>Rich and warm, woody scents are ideal for those who seek a grounded and sophisticated fragrance.</p>
+          </div>
+          <div class="col-md-6">
+            <h4>Fresh</h4>
+            <p>Light and invigorating, fresh fragrances are perfect for a clean and vibrant impression.</p>
+          </div>
+          <div class="col-md-6">
+            <h4>Oriental</h4>
+            <p>Mysterious and exotic, oriental fragrances exude a luxurious and captivating aura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About End-->
+
+    <!--Products Start-->
+    <section class="py-5 products" id="products">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: white; font-weight: bold">Our Collections</h2>
+        <div class="row">
+          <!--Small Size-->
+          <div class="col-md-4">
+            <div class="product-card card" onclick="showDescription('small')">
+              <img src="img/small.jpg" class="card-img-top" alt="" />
+              <div class="card-body text-center">
+                <h5 class="card-title">Small Size</h5>
+                <p class="card-text">30ml</p>
+                <p class="text-primary fw-bold">Rp. 150.000</p>
+              </div>
+            </div>
+          </div>
+          <!--Medium Size-->
+          <div class="col-md-4">
+            <div class="product-card card" onclick="showDescription('medium')">
+              <img src="img/medium.jpg" class="card-img-top" alt="" />
+              <div class="card-body text-center">
+                <h5 class="card-title">Medium Size</h5>
+                <p class="card-text">50ml</p>
+                <p class="text-primary fw-bold">Rp. 250.000</p>
+              </div>
+            </div>
+          </div>
+          <!--Large Size-->
+          <div class="col-md-4">
+            <div class="product-card card" onclick="showDescription('large')">
+              <img src="img/large.jpg" class="card-img-top" alt="" />
+              <div class="card-body text-center">
+                <h5 class="card-title">Large Size</h5>
+                <p class="card-text">100ml</p>
+                <p class="text-primary fw-bold">Rp. 450.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Products End-->
+
+    <!--Product Descriptions Start-->
+    <section class="product-description" id="small-description">
+      <div class="container d-flex align-items-center">
+        <div class="me-4">
+          <img src="img/small.jpg" alt="Small Parfum" class="img-fluid rounded" style="max-width: 300px" />
+        </div>
+        <div>
+          <h3 class="mb-4" style="font-weight: bold">Small Size (30ml)</h3>
+          <p>Perfect for those who love variety or travel frequently. This concentrated formula ensures long-lasting fragrance despite its compact size.</p>
+          <a href="#order" class="btn btn-primary btn-custom">Order Now</a>
+        </div>
+      </div>
+    </section>
+    <section class="product-description" id="medium-description">
+      <div class="container d-flex align-items-center">
+        <div class="me-4">
+          <img src="img/medium.jpg" alt="Medium Parfum" class="img-fluid rounded" style="max-width: 300px" />
+        </div>
+        <div>
+          <h3 class="mb-4" style="font-weight: bold">Medium Size (50ml)</h3>
+          <p>Our bestseller. Ideal for daily use, this size offers the perfect balance between longevity and value.</p>
+          <a href="#order" class="btn btn-primary btn-custom">Order Now</a>
+        </div>
+      </div>
+    </section>
+    <section class="product-description" id="large-description">
+      <div class="container d-flex align-items-center">
+        <div class="me-4">
+          <img src="img/large.jpg" alt="Large Parfum" class="img-fluid rounded" style="max-width: 300px" />
+        </div>
+        <div>
+          <h3 class="mb-4" style="font-weight: bold">Large Size (100ml)</h3>
+          <p>For the fragrance enthusiast. This larger bottle ensures you'll always have your signature scent on hand.</p>
+          <a href="#order" class="btn btn-primary btn-custom">Order Now</a>
+        </div>
+      </div>
+    </section>
+    <!--Product Descriptions End-->
+
+    <!--Order Form Start-->
+    <section class="py-5 order" id="order">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: white; font-weight: bold">Place Your Order</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="fragrance" class="form-label">Fragrance</label>
+                    <select class="form-select" id="fragrance" required>
+                      <option value="" disabled selected>Select a Fragrance</option>
+                      <option value="floral">Floral</option>
+                      <option value="woody">Woody</option>
+                      <option value="fresh">Fresh</option>
+                      <option value="oriental">Oriental</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="product" class="form-label">Product</label>
+                    <select class="form-select" id="product" required>
+                      <option value="" disabled selected>Select a Product</option>
+                      <option value="small">Small Size (30ml) - Rp. 150.000</option>
+                      <option value="medium">Medium Size (50ml) - Rp. 250.000</option>
+                      <option value="large">Large Size (100ml) - Rp. 450.000</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" placeholder="Your Delivery Address" required></textarea>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-custom">Submit Order</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Order Form End-->
+
+    <!--Contact Start-->
+    <section class="py-5 contact" id="contact">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: white; font-weight: bold">Contact Us</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="contact-info text-center" style="color: black">
+              <p><i class="fas fa-phone mb-3"></i> +6282284224884</p>
+              <p><i class="fas fa-envelope mb-3"></i> info@Scentique.com</p>
+              <p><i class="fas fa-map-marker-alt mb-4"></i> Jl. Pandega No. 01, Yogyakarta</p>
+              <div class="social-links">
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem">
+                  Follow us on:
+                  <a href="https://www.instagram.com/scentiqueid?igsh=MXdnNzJxOTBnZHJ0ag==" style="text-decoration: none; color: black; margin: 0 10px">
+                    <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                  </a>
+                  <a href="https://facebook.com" target="_blank" style="text-decoration: none; color: black; margin: 0 10px">
+                    <i class="bi bi-facebook" style="font-size: 1.5rem"></i>
+                  </a>
+                  <a href="https://x.com/parfumfess?t=qLMJXq4SgY-58kT0Mmo0tw&s=08" style="text-decoration: none; color: black; margin: 0 10px">
+                    <i class="bi bi-twitter" style="font-size: 1.5rem"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact End-->
+
+    <!--Footer Start-->
+    <footer class="bg-dark text-light py-4">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2024 Scentique. All rights reserved.</p>
+      </div>
+    </footer>
+    <!--Footer End-->
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Custom JavaScript-->
+    <script>
+      function showDescription(size) {
+        // Hide all descriptions
+        document.querySelectorAll(".product-description").forEach((desc) => {
+          desc.style.display = "none";
+        });
+
+        // Show selected description
+        const selectedDesc = document.getElementById(size + "-description");
+        selectedDesc.style.display = "block";
+
+        // Scroll to description
+        selectedDesc.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Navbar active state
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.querySelectorAll(".nav-link").forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+
+      // Smooth scroll for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
