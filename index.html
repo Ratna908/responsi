@@ -278,20 +278,20 @@
         <h2 class="text-center mb-5" style="color: white; font-weight: bold">Place Your Order</h2>
         <div class="row justify-content-center">
           <div class="col-md-8">
-            <div class="card">
-              <div class="card-body">
-                <form>
+            <form name="Responsi">
+              <div class="card">
+                <div class="card-body">
                   <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Name" required />
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" name="nama" required />
                   </div>
                   <div class="mb-3">
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required />
+                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" name="nomor_hp" required />
                   </div>
                   <div class="mb-3">
                     <label for="fragrance" class="form-label">Fragrance</label>
-                    <select class="form-select" id="fragrance" required>
+                    <select class="form-select" id="fragrance" name="aroma" required>
                       <option value="" disabled selected>Select a Fragrance</option>
                       <option value="floral">Floral</option>
                       <option value="woody">Woody</option>
@@ -301,7 +301,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="product" class="form-label">Product</label>
-                    <select class="form-select" id="product" required>
+                    <select class="form-select" id="product" name="ukuran" required>
                       <option value="" disabled selected>Select a Product</option>
                       <option value="small">Small Size (30ml) - Rp. 150.000</option>
                       <option value="medium">Medium Size (50ml) - Rp. 250.000</option>
@@ -309,15 +309,19 @@
                     </select>
                   </div>
                   <div class="mb-3">
+                    <label for="quantity" class="form-label">Order Quantity</label>
+                    <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity" name="jumlah" min="1" required />
+                  </div>
+                  <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <textarea class="form-control" id="address" rows="3" placeholder="Your Delivery Address" required></textarea>
+                    <textarea class="form-control" id="address" rows="3" placeholder="Your Delivery Address" name="alamat" required></textarea>
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary btn-custom">Submit Order</button>
                   </div>
-                </form>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -397,6 +401,17 @@
             behavior: "smooth",
           });
         });
+      });
+    </script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzRM9b7riE6Bjl8SBReRAE-z11tvlYtXuv__21AlBwv5U1v_S5jWErb0oeCrsIVy4jPGA/exec";
+      const form = document.forms["Responsi"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
       });
     </script>
   </body>
